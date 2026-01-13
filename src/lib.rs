@@ -293,6 +293,7 @@ impl Telnet {
                     Some(item) => {
                         if let Item::Line(line) = item? {
                             let mut line = self.clear.color(&line);
+                            println!("{}", line);
                             if self
                                 .prompts
                                 .iter()
