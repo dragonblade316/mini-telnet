@@ -152,6 +152,7 @@ impl Telnet {
                                 }
                                 Item::Line(line) => {
                                     let line = self.clear.color(&line);
+                                    println!("data: {}", line);
                                     if line.ends_with(self.username_prompt.as_bytes()) {
                                         if auth_failed {
                                             return Err(TelnetError::AuthenticationFailed);
